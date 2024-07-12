@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сервіс оренди автомобілів</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Сервіс оренди автомобілів</h1>
+        <nav>
+            <ul>
+                <li><a href="#account">Акаунт</a></li>
+                <li><a href="#orders">Замовлення</a></li>
+                <li><a href="#catalog">Каталог</a></li>
+                <li><a href="#menu">Меню</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="account">
+            <h2>Інформація про акаунт</h2>
+            <p>Ім'я користувача: JohnDoe</p>
+            <p>Електронна пошта: johndoe@example.com</p>
+        </section>
+
+        <section id="orders">
+            <h2>Історія замовлень</h2>
+            <ul>
+                <li>Замовлення #1: BMW 5 Series - 2024-01-10</li>
+                <li>Замовлення #2: Audi A6 - 2024-02-15</li>
+            </ul>
+            <h2>Поточні замовлення</h2>
+            <ul>
+                <li>Замовлення #3: Tesla Model 3 - 2024-03-20</li>
+            </ul>
+        </section>
+
+        <section id="catalog">
+            <h2>Каталог автомобілів</h2>
+            <div class="car">
+                <h3>BMW 5 Series</h3>
+                <p>Група: Люкс</p>
+                <p>Ціна: $100/день</p>
+                <button onclick="rentCar('BMW 5 Series')">Орендувати</button>
+            </div>
+            <div class="car">
+                <h3>Audi A6</h3>
+                <p>Група: Люкс</p>
+                <p>Ціна: $90/день</p>
+                <button onclick="rentCar('Audi A6')">Орендувати</button>
+            </div>
+            <div class="car">
+                <h3>Tesla Model 3</h3>
+                <p>Група: Електричний</p>
+                <p>Ціна: $120/день</p>
+                <button onclick="rentCar('Tesla Model 3')">Орендувати</button>
+            </div>
+        </section>
+
+        <section id="menu">
+            <h2>Користувацьке меню</h2>
+            <ul>
+                <li><a href="#account">Переглянути акаунт</a></li>
+                <li><a href="#orders">Переглянути замовлення</a></li>
+                <li><a href="#catalog">Переглянути каталог</a></li>
+                <li><a href="#logout">Вийти</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
