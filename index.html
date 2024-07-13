@@ -11,22 +11,27 @@
         <h1>Сервіс оренди автомобілів</h1>
         <nav>
             <ul>
-                <li><a href="#account">Акаунт</a></li>
-                <li><a href="#orders">Замовлення</a></li>
-                <li><a href="#catalog">Каталог</a></li>
-                <li><a href="#menu">Меню</a></li>
+                <li><a href="#account" onclick="showSection('account')">Акаунт</a></li>
+                <li><a href="#orders" onclick="showSection('orders')">Замовлення</a></li>
+                <li><a href="#catalog" onclick="showSection('catalog')">Каталог</a></li>
+                <li><a href="#menu" onclick="showSection('menu')">Меню</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="account">
+        <section id="welcome">
+            <h2>Вітаємо, JohnDoe!</h2>
+            <p>Виберіть розділ, щоб переглянути деталі.</p>
+        </section>
+
+        <section id="account" class="hidden">
             <h2>Інформація про акаунт</h2>
             <p>Ім'я користувача: JohnDoe</p>
             <p>Електронна пошта: johndoe@example.com</p>
         </section>
 
-        <section id="orders">
+        <section id="orders" class="hidden">
             <h2>Історія замовлень</h2>
             <ul>
                 <li>Замовлення #1: BMW 5 Series - 2024-01-10</li>
@@ -38,35 +43,39 @@
             </ul>
         </section>
 
-        <section id="catalog">
+        <section id="catalog" class="hidden">
             <h2>Каталог автомобілів</h2>
             <div class="car">
                 <h3>BMW 5 Series</h3>
+                <img src="images/bmw.jpg" alt="BMW 5 Series">
                 <p>Група: Люкс</p>
                 <p>Ціна: $100/день</p>
                 <button onclick="rentCar('BMW 5 Series')">Орендувати</button>
             </div>
             <div class="car">
                 <h3>Audi A6</h3>
+                <img src="images/audi.jpg" alt="Audi A6">
                 <p>Група: Люкс</p>
-                <p>Ціна: $90/день</p>
+                <p>Ціна: $90/день</п>
                 <button onclick="rentCar('Audi A6')">Орендувати</button>
             </div>
             <div class="car">
                 <h3>Tesla Model 3</h3>
+                <img src="images/tesla.jpg" alt="Tesla Model 3">
                 <p>Група: Електричний</p>
                 <p>Ціна: $120/день</p>
                 <button onclick="rentCar('Tesla Model 3')">Орендувати</button>
             </div>
         </section>
 
-        <section id="menu">
+        <section id="menu" class="hidden">
             <h2>Користувацьке меню</h2>
             <ul>
-                <li><a href="#account">Переглянути акаунт</a></li>
-                <li><a href="#orders">Переглянути замовлення</a></li>
-                <li><a href="#catalog">Переглянути каталог</a></li>
-                <li><a href="#logout">Вийти</a></li>
+<li><a href="#account" onclick="showSection('account')">Переглянути акаунт</a></li>
+<li><a href="#orders" onclick="showSection('orders')">Переглянути замовлення</a></li>
+<li><a href="#catalog" onclick="showSection('catalog')">Переглянути каталог</a></li>
+<li><a href="#logout">Вийти</a></li>
+
             </ul>
         </section>
     </main>
@@ -74,3 +83,5 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+
