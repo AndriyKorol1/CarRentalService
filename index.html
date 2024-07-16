@@ -3,85 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сервіс оренди автомобілів</title>
+    <title>LuxDrive - Преміум оренда автомобілів</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1>Сервіс оренди автомобілів</h1>
-        <nav>
-            <ul>
-                <li><a href="#account" onclick="showSection('account')">Акаунт</a></li>
-                <li><a href="#orders" onclick="showSection('orders')">Замовлення</a></li>
-                <li><a href="#catalog" onclick="showSection('catalog')">Каталог</a></li>
-                <li><a href="#menu" onclick="showSection('menu')">Меню</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-car-side"></i>
+                <h1>LuxDrive</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#dashboard" onclick="showSection('dashboard')"><i class="fas fa-tachometer-alt"></i> Панель</a></li>
+                    <li><a href="#account" onclick="showSection('account')"><i class="fas fa-user"></i> Акаунт</a></li>
+                    <li><a href="#orders" onclick="showSection('orders')"><i class="fas fa-list"></i> Замовлення</a></li>
+                    <li><a href="#catalog" onclick="showSection('catalog')"><i class="fas fa-car"></i> Каталог</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-
     <main>
-        <section id="welcome">
-            <h2>Вітаємо, JohnDoe!</h2>
-            <p>Виберіть розділ, щоб переглянути деталі.</p>
+        <section id="dashboard">
+            <div class="container">
+                <h2>Панель управління</h2>
+                <div class="dashboard-widgets">
+                    <div class="widget">
+                        <h3>Активні оренди</h3>
+                        <p class="number">2</p>
+                    </div>
+                    <div class="widget">
+                        <h3>Бонусні бали</h3>
+                        <p class="number">1500</p>
+                    </div>
+                    <div class="widget">
+                        <h3>Економія</h3>
+                        <p class="number">$350</p>
+                    </div>
+                </div>
+            </div>
         </section>
-
         <section id="account" class="hidden">
-            <h2>Інформація про акаунт</h2>
-            <p>Ім'я користувача: JohnDoe</p>
-            <p>Електронна пошта: johndoe@example.com</p>
+            <div class="container">
+                <h2>Інформація про акаунт</h2>
+                <div class="profile">
+                    <img src="images/profile.jpg" alt="Фото профілю" class="profile-pic">
+                    <div class="profile-info">
+                        <p><strong>Ім'я:</strong> John Doe</p>
+                        <p><strong>Email:</strong> johndoe@example.com</p>
+                        <p><strong>Телефон:</strong> +380 12 345 6789</p>
+                        <p><strong>Дата реєстрації:</strong> 01.01.2024</p>
+                    </div>
+                </div>
+                <button class="edit-profile">Редагувати профіль</button>
+            </div>
         </section>
-
         <section id="orders" class="hidden">
-            <h2>Історія замовлень</h2>
-            <ul>
-                <li>Замовлення #1: BMW 5 Series - 2024-01-10</li>
-                <li>Замовлення #2: Audi A6 - 2024-02-15</li>
-            </ul>
-            <h2>Поточні замовлення</h2>
-            <ul>
-                <li>Замовлення #3: Tesla Model 3 - 2024-03-20</li>
-            </ul>
+            <div class="container">
+                <h2>Історія замовлень</h2>
+                <div class="order-list">
+                    <div class="order-item">
+                        <img src="images/bmw.jpg" alt="BMW 5 Series">
+                        <div class="order-details">
+                            <h3>BMW 5 Series</h3>
+                            <p>Дата: 10.01.2024 - 15.01.2024</p>
+                            <p>Статус: Завершено</p>
+                            <p>Загальна вартість: $500</p>
+                        </div>
+                    </div>
+                    <div class="order-item">
+                        <img src="images/audi.jpg" alt="Audi A6">
+                        <div class="order-details">
+                            <h3>Audi A6</h3>
+                            <p>Дата: 15.02.2024 - 20.02.2024</p>
+                            <p>Статус: Активно</p>
+                            <p>Загальна вартість: $450</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
-
         <section id="catalog" class="hidden">
-            <h2>Каталог автомобілів</h2>
-            <div class="car">
-                <h3>BMW 5 Series</h3>
-                <img src="images/bmw.jpg" alt="BMW 5 Series">
-                <p>Група: Люкс</p>
-                <p>Ціна: $100/день</p>
-                <button onclick="rentCar('BMW 5 Series')">Орендувати</button>
+            <div class="container">
+                <h2>Каталог автомобілів</h2>
+                <div class="filters">
+                    <select id="carType">
+                        <option value="">Тип автомобіля</option>
+                        <option value="sedan">Седан</option>
+                        <option value="suv">SUV</option>
+                        <option value="sport">Спорткар</option>
+                    </select>
+                    <select id="priceRange">
+                        <option value="">Ціновий діапазон</option>
+                        <option value="economy">Економ</option>
+                        <option value="standard">Стандарт</option>
+                        <option value="premium">Преміум</option>
+                    </select>
+                    <button onclick="filterCars()">Фільтрувати</button>
+                </div>
+                <div class="car-grid">
+                    <div class="car-card">
+                        <img src="images/bmw.jpg" alt="BMW 5 Series">
+                        <h3>BMW 5 Series</h3>
+                        <p>Група: Люкс</p>
+                        <p>Ціна: $100/день</p>
+                        <div class="car-features">
+                            <span><i class="fas fa-user"></i> 5</span>
+                            <span><i class="fas fa-suitcase"></i> 4</span>
+                            <span><i class="fas fa-gas-pump"></i> Бензин</span>
+                        </div>
+                        <button onclick="rentCar('BMW 5 Series')">Орендувати</button>
+                    </div>
+                    <div class="car-card">
+                        <img src="images/audi.jpg" alt="Audi A6">
+                        <h3>Audi A6</h3>
+                        <p>Група: Люкс</p>
+                        <p>Ціна: $90/день</p>
+                        <div class="car-features">
+                            <span><i class="fas fa-user"></i> 5</span>
+                            <span><i class="fas fa-suitcase"></i> 3</span>
+                            <span><i class="fas fa-gas-pump"></i> Дизель</span>
+                        </div>
+                        <button onclick="rentCar('Audi A6')">Орендувати</button>
+                    </div>
+                    <div class="car-card">
+                        <img src="images/tesla.jpg" alt="Tesla Model 3">
+                        <h3>Tesla Model 3</h3>
+                        <p>Група: Електричний</p>
+                        <p>Ціна: $120/день</p>
+                        <div class="car-features">
+                            <span><i class="fas fa-user"></i> 5</span>
+                            <span><i class="fas fa-suitcase"></i> 2</span>
+                            <span><i class="fas fa-charging-station"></i> Електро</span>
+                        </div>
+                        <button onclick="rentCar('Tesla Model 3')">Орендувати</button>
+                    </div>
+                </div>
             </div>
-            <div class="car">
-                <h3>Audi A6</h3>
-                <img src="images/audi.jpg" alt="Audi A6">
-                <p>Група: Люкс</p>
-                <p>Ціна: $90/день</п>
-                <button onclick="rentCar('Audi A6')">Орендувати</button>
-            </div>
-            <div class="car">
-                <h3>Tesla Model 3</h3>
-                <img src="images/tesla.jpg" alt="Tesla Model 3">
-                <p>Група: Електричний</p>
-                <p>Ціна: $120/день</p>
-                <button onclick="rentCar('Tesla Model 3')">Орендувати</button>
-            </div>
-        </section>
-
-        <section id="menu" class="hidden">
-            <h2>Користувацьке меню</h2>
-            <ul>
-<li><a href="#account" onclick="showSection('account')">Переглянути акаунт</a></li>
-<li><a href="#orders" onclick="showSection('orders')">Переглянути замовлення</a></li>
-<li><a href="#catalog" onclick="showSection('catalog')">Переглянути каталог</a></li>
-<li><a href="#logout">Вийти</a></li>
-
-            </ul>
         </section>
     </main>
-
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 LuxDrive. Всі права захищені.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
-
-
